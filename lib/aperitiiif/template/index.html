@@ -25,6 +25,7 @@
     <section class='section'>
       <div class='container'>
         <h2 class='is-size-4 mb-3'>Items ({{ items.size }})</h2>
+        {% if items.size > 1000 %}<p>(Limiting display to first 1000)</p>{% endif %}
         <div class='table-container'>
           <table id='table' class='table display is-hoverable is-striped is-bordered'>
             <thead>
@@ -37,7 +38,7 @@
               </tr>
             </thead>
             <tbody>
-              {% for item in items %}
+              {% for item in items | limit: 1000 %}
               <tr>
                 <td><b>{{ item.id }}</b></td>
                 <td>{{ item.label }}</td>

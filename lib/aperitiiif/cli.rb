@@ -30,7 +30,7 @@ module Aperitiiif
       # rubocop:disable Metrics/AbcSize
       def build
         batch = Aperitiiif::Batch.new
-        batch.load_config_file(options[:config]) if options[:config].present?
+        batch.load_config_file(options[:config]) unless options[:config].to_s.empty?
         batch.reset if options[:reset]
         batch.lint  if options[:lint]
 

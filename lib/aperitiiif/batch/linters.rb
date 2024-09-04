@@ -25,7 +25,7 @@ module Aperitiiif
 
     # has smell :reek:TooManyStatements
     def warn_nil_record_items
-      nil_record_items = items.select { |item| item.record.blank? }
+      nil_record_items = items.select { |item| item.record.to_s.empty? }
       return false if nil_record_items.empty?
 
       warn "Could not find record(s) for #{nil_record_items.length} items:".colorize(:orange)

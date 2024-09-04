@@ -48,6 +48,12 @@ module Aperitiiif
       "#{@config.presentation_api_url}/#{@config.namespace}/#{@id}/manifest.json"
     end
 
+    def full_url
+      return '' if assets.empty?
+
+      assets.first.full_resource_url
+    end
+
     def thumbnail_url
       return '' if assets.empty?
 
@@ -96,6 +102,7 @@ module Aperitiiif
         'label' => label,
         'manifest_url' => manifest_url,
         'thumbnail_url' => thumbnail_url,
+        'full_url' => full_url,
         'viewpoint_url' => viewpoint_url
       }
     end
