@@ -60,9 +60,11 @@ module Aperitiiif
       assets.first.thumbnail_url
     end
 
+    # rubocop:disable Layout/LineLength
     def viewpoint_url
-      "https://dss.hosting.nyu.edu/viewpoint/mirador/#manifests[]=#{CGI.escape manifest_url}&theme=dark"
+      "https://migrants-and-the-state.github.io/viewpoint/mirador/#manifests[]=#{CGI.escape manifest_url}&theme=light&thumbs=bottom&view=single&workspacecontrols=false"
     end
+    # rubocop:enable Layout/LineLength
 
     # has smell :reek: TooManyStatements
     def seed

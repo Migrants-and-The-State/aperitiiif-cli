@@ -38,8 +38,8 @@ module Aperitiiif
     end
 
     def batch_namespace(dir = nil)
-      dir ||= FileUtils.pwd
-      name = dir.split(service_namespace).last
+      dir ||= Dir.getwd
+      name = File.basename(dir).sub service_namespace, ''
       Utils.slugify name
     end
 

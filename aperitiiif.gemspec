@@ -25,9 +25,11 @@ Gem::Specification.new do |spec|
   spec.require_paths  = ['lib']
 
   spec.add_dependency 'colorize'
+  spec.add_dependency 'csv'
   spec.add_dependency 'iiif-presentation', '1.1'
   spec.add_dependency 'liquid'
   spec.add_dependency 'mimemagic'
+  spec.add_dependency 'ostruct'
   spec.add_dependency 'parallel'
   spec.add_dependency 'ruby-progressbar'
   spec.add_dependency 'ruby-vips'
